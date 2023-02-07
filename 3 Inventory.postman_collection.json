@@ -1,0 +1,2274 @@
+{
+	"info": {
+		"_postman_id": "b28ec63a-eefe-4158-86c5-c8633039959e",
+		"name": "3 Inventory",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24133437"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "registration",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"nurullah7733@gmail.com\",\r\n    \"firstName\": \"Nurullah\",\r\n    \"lastName\": \"khan\",\r\n    \"password\": \"1234\",\r\n    \"mobile\": \"01739162420\",\r\n    \"photo\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/registration",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"registration"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"nurullah7733@gmail.com\",\r\n    \"password\": \"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user details",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "email",
+								"value": "nurullah7733@gmail.comd",
+								"type": "default"
+							},
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"nurullah7733@gmail.com\",\r\n    \"password\": \"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/user-details",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"user-details"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update user",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "email",
+								"value": "nurullah7733@gmail.com",
+								"type": "default"
+							},
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n \r\n    \"firstName\": \"Nurullah\",\r\n    \"lastName\": \"khan\", \r\n    \"mobile\": \"017391624200\",\r\n    \"photo\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/user-update",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"user-update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "forget-password",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "email",
+								"value": "nurullah7733@gmail.com",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/forget-password/nurullah7733@gmail.com",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"forget-password",
+								"nurullah7733@gmail.com"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "verify-otp",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "email",
+								"value": "nurullah7733@gmail.com",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"nurullah7733@gmail.com\",\r\n    \"password\": \"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/verify-otp/nurullah7733@gmail.com/726076",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"verify-otp",
+								"nurullah7733@gmail.com",
+								"726076"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "reset-new-password",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "email",
+								"value": "nurullah7733@gmail.com",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"nurullah7733@gmail.com\",\r\n    \"otpCode\": \"726076\",\r\n    \"password\": \"0000\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/create-new-password",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"create-new-password"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Brands",
+			"item": [
+				{
+					"name": "Create brand",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"saf\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/create-brand",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"create-brand"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "dropdown brand",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"safdfddmsungfddhhdgf\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/all-brand",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"all-brand"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list brands",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"safdfddmsungfddhhdgf\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/list-brands/1/200/0",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"list-brands",
+								"1",
+								"200",
+								"0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update brand",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"samsung\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/update-brand/63c4e86edfd32c5ccdf83db4",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"update-brand",
+								"63c4e86edfd32c5ccdf83db4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete brand",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"samsung-2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/delete-brand/63c4e86edfd32c5ccdf83db4",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"delete-brand",
+								"63c4e86edfd32c5ccdf83db4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "brand detail by id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"samsung-2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/brand-detail/63c4e86edfd32c5ccdf83db4",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"brand-detail",
+								"63c4e86edfd32c5ccdf83db4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Categories",
+			"item": [
+				{
+					"name": "Create Category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"TV\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/create-category",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"create-category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Category Dropdown list",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"safdfddmsungfddhhdgf\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/all-category",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"all-category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list Category",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"safdfddmsungfddhhdgf\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/list-categories/1/1/0",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"list-categories",
+								"1",
+								"1",
+								"0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update Category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Ac\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/update-category/63bfed6b2c30848998d51a23",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"update-category",
+								"63bfed6b2c30848998d51a23"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "category Detail  by id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Ac\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/category-detail/63c4ebffba395cd63c6924ef",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"category-detail",
+								"63c4ebffba395cd63c6924ef"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete  Category",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Ac\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/delete-category/63c4ebffba395cd63c6924ef",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"delete-category",
+								"63c4ebffba395cd63c6924ef"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Customer",
+			"item": [
+				{
+					"name": "Create customer",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							},
+							{
+								"key": "email",
+								"value": "nurullah77333@gmail.com",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"customerName\": \"Nurullah\",\r\n    \"phone\": \"01739162420\",\r\n    \"email\": \"customer@gmail.com\",\r\n    \"address\": \"Dhaka\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/create-customer",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"create-customer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "customer dropdown",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/all-customer",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"all-customer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list customer",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/list-customers/1/1/1739162420",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"list-customers",
+								"1",
+								"1",
+								"1739162420"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update customer",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"customerName\": \"Nurullah Ac\",\r\n    \"email\": \"nurullah@gamil.com\",\r\n    \"phone\":\"01739162420\",\r\n    \"address\":\"Dinajpur\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/update-customer/63bfffbfc20a9fb193fec48a",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"update-customer",
+								"63bfffbfc20a9fb193fec48a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete customer",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"customerName\": \"Nurullah Ac\",\r\n    \"phone\":\"01739162420\",\r\n    \"address\":\"Dinajpur\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/delete-customer/63c40ea981f49712b52cd0e9",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"delete-customer",
+								"63c40ea981f49712b52cd0e9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "customer details by id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/get-customer-details/63c40ea981f49712b52cd0e9",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"get-customer-details",
+								"63c40ea981f49712b52cd0e9"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Supplier",
+			"item": [
+				{
+					"name": "Create supplier",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Nurullah\",\r\n    \"phone\": \"017391624200\",\r\n    \"email\": \"customer@gmail.com\",\r\n    \"address\": \"Dhaka\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/create-supplier",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"create-supplier"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "all supplier",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"safdfddmsungfddhhdgf\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/all-supplier/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"all-supplier",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list supplier",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"safdfddmsungfddhhdgf\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/list-suppliers/1/5/0",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"list-suppliers",
+								"1",
+								"5",
+								"0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update supplier",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Nurullah Ac\",\r\n    \"phone\":\"01739162420\",\r\n    \"address\":\"Dinajpur\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/update-supplier/63c015b1c56fe7a7f74e87ad",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"update-supplier",
+								"63c015b1c56fe7a7f74e87ad"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete supplier",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Nurullah Ac\",\r\n    \"phone\":\"01739162420\",\r\n    \"address\":\"Dinajpur\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/delete-supplier/63c40c65f8d90eb0dcfaca8a",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"delete-supplier",
+								"63c40c65f8d90eb0dcfaca8a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get supplier by id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Nurullah Ac\",\r\n    \"phone\":\"01739162420\",\r\n    \"address\":\"Dinajpur\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/get-supplier/63d3f28e58de55d5aee6dd7b",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"get-supplier",
+								"63d3f28e58de55d5aee6dd7b"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Expense Type",
+			"item": [
+				{
+					"name": "create expense type",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"cc9\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/create-expense-type",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"create-expense-type"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "dropdown expense",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/all-expense-type",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"all-expense-type"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list expense",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"safdfddmsungfddhhdgf\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/list-expense-type/1/5/0",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"list-expense-type",
+								"1",
+								"5",
+								"0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update expense",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"meeting\" \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/update-expense-type/63c01b9e07c93d5a3bde2c85",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"update-expense-type",
+								"63c01b9e07c93d5a3bde2c85"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Expense type",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/delete-expense-type/63c55c92e12fc61567ec1ca2",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"delete-expense-type",
+								"63c55c92e12fc61567ec1ca2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "detail Expense type  by id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/expense-type-detail/63d7d60dc941f7745341fb05",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"expense-type-detail",
+								"63d7d60dc941f7745341fb05"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Expense",
+			"item": [
+				{
+					"name": "create expense",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"typeId\": \"63c55c92e12fc61567ec1ca2\",\r\n    \"amount\": \"560\",\r\n    \"note\": \"for\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/create-expense",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"create-expense"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list expense",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"safdfddmsungfddhhdgf\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/list-expense/1/20/0",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"list-expense",
+								"1",
+								"20",
+								"0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update expense",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"typeId\": \"63c02eacc3ab80a070d6a971\",\r\n    \"amount\": \"5600\",\r\n    \"node\": \"for Meeting\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/update-expense/63c02ebac3ab80a070d6a973",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"update-expense",
+								"63c02ebac3ab80a070d6a973"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Expense",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/delete-expense/63c4d902b3374a94ad909f77",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"delete-expense",
+								"63c4d902b3374a94ad909f77"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Expense Report",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fromDate\": \"2023-01-15T04:56:36.262+00:00\",\r\n    \"toDate\": \"2023-02-17T04:56:36.262+00:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/expense-report",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"expense-report"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Expense detail by id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fromDate\": \"2023-01-15T04:56:36.262+00:00\",\r\n    \"toDate\": \"2023-01-17T04:56:36.262+00:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/expense-detail/63c55ca0e12fc61567ec1cab",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"expense-detail",
+								"63c55ca0e12fc61567ec1cab"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Expense Summary",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/expense-summary",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"expense-summary"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "create product",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"brandId\": \"63c4e86edfd32c5ccdf83db4\",\r\n    \"categoryId\": \"63c4ebffba395cd63c6924ef\",\r\n    \"name\": \"s10\",\r\n    \"unit\": \"pcs\",\r\n    \"details\": \"not details\"\r\n}\r\n\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/create-product",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"create-product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list product",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"safdfddmsungfddhhdgf\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/list-product/1/2/0",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"list-product",
+								"1",
+								"2",
+								"0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "dropdown list product",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"safdfddmsungfddhhdgf\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/all-product",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"all-product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update product",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"brandId\": \"63bf069350ecb62e8b10615d\",\r\n    \"categoryId\": \"63bfed6b2c30848998d51a23\",\r\n    \"name\": \"oppo A12\",\r\n    \"unit\": \"pcs\",\r\n    \"details\": \"not details\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/update-product/63c565901cb9d0a0bcc1a8dd",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"update-product",
+								"63c565901cb9d0a0bcc1a8dd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete product",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"brandId\": \"63bf069350ecb62e8b10615d\",\r\n    \"categoryId\": \"63bfed6b2c30848998d51a23\",\r\n    \"name\": \"oppo A15\",\r\n    \"unit\": \"pcs\",\r\n    \"details\": \"not details\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/delete-product/63c565901cb9d0a0bcc1a8dd",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"delete-product",
+								"63c565901cb9d0a0bcc1a8dd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Product detail by id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"brandId\": \"63bf069350ecb62e8b10615d\",\r\n    \"categoryId\": \"63bfed6b2c30848998d51a23\",\r\n    \"name\": \"oppo A15\",\r\n    \"unit\": \"pcs\",\r\n    \"details\": \"not details\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/product-detail/63c565901cb9d0a0bcc1a8dd",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"product-detail",
+								"63c565901cb9d0a0bcc1a8dd"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Purchases",
+			"item": [
+				{
+					"name": "create purchase",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"parent\": {\r\n\t\t\"supplierId\": \"63c40c65f8d90eb0dcfaca8a\",\r\n\t\t\"vatTax\": \"5\",\r\n\t\t\"discount\": \"10\",\r\n\t\t\"otherCost\": \"3\",\r\n\t\t\"shippingCost\": \"50\",\r\n\t\t\"grandTotal\": \"68\",\r\n\t\t\"note\": \"first note\"\r\n\t},\r\n\t\"childs\": [{\r\n\t\t\t\"productId\": \"63c565901cb9d0a0bcc1a8dd\", \r\n\t\t\t\"qty\": \"6\",\r\n\t\t\t\"unitCost\": \"14\",\r\n\t\t\t\"total\": \"15\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"productId\": \"63c565901cb9d0a0bcc1a8dd\",\r\n\t\t\t\"qty\": \"5\",\r\n\t\t\t\"unitCost\": \"458\",\r\n\t\t\t\"total\": \"487\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"productId\": \"63c565901cb9d0a0bcc1a8dd\",\r\n\t\t\t\"qty\": \"2\",\r\n\t\t\t\"unitCost\": \"25\",\r\n\t\t\t\"total\": \"365\"\r\n\t\t}\r\n\t]\r\n}\r\n\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/create-purchase",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"create-purchase"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "purchase  list",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/list-purchase-product/1/20/0",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"list-purchase-product",
+								"1",
+								"20",
+								"0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete purchase",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/delete-purchase/63c4cdca6e191f3f21dbdb3f",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"delete-purchase",
+								"63c4cdca6e191f3f21dbdb3f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "purchase  Report",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fromDate\": \"2023-01-15T04:56:36.262+00:00\",\r\n    \"toDate\": \"2023-01-17T04:56:36.262+00:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/purchase-report",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"purchase-report"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "purchase  Summary",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/purchase-summary",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"purchase-summary"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Sales",
+			"item": [
+				{
+					"name": "create sales",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"parent\": {\r\n\t\t\"customerId\": \"63c40ea981f49712b52cd0e9\",\r\n\t\t\"vatTax\": \"5\",\r\n\t\t\"discount\": \"10\",\r\n\t\t\"otherCost\": \"3\",\r\n\t\t\"shippingCost\": \"50\",\r\n\t\t\"grandTotal\": \"68\",\r\n\t\t\"note\": \"first note\"\r\n\t},\r\n\t\"childs\": [{\r\n\t\t\t\"productId\": \"63c407205a2cc2f0376e8817\", \r\n\t\t\t\"qty\": \"6\",\r\n\t\t\t\"unitCost\": \"14\",\r\n\t\t\t\"total\": \"15\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"productId\": \"63c407015a2cc2f0376e8815\",\r\n\t\t\t\"qty\": \"5\",\r\n\t\t\t\"unitCost\": \"458\",\r\n\t\t\t\"total\": \"487\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"productId\": \"63c406de5a2cc2f0376e8813\",\r\n\t\t\t\"qty\": \"2\",\r\n\t\t\t\"unitCost\": \"25\",\r\n\t\t\t\"total\": \"365\"\r\n\t\t}\r\n\t]\r\n}\r\n\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/create-sales",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"create-sales"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "sales list",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/sales-list/1/5/0",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"sales-list",
+								"1",
+								"5",
+								"0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete sales",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/sale-delete/63c4ca364d19c34e0ade0784",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"sale-delete",
+								"63c4ca364d19c34e0ade0784"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "sales report",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fromDate\": \"2023-01-10T04:56:36.262+00:00\",\r\n    \"toDate\": \"2023-01-20T04:56:36.262+00:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/sales-report",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"sales-report"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "sales Summary",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fromDate\": \"2023-01-15T04:56:36.262+00:00\",\r\n    \"toDate\": \"2023-01-17T04:56:36.262+00:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/sales-summary",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"sales-summary"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "return product",
+			"item": [
+				{
+					"name": "create return",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"parent\": {\r\n\t\t\"customerId\": \"63c40ea981f49712b52cd0e9\",\r\n\t\t\"vatTax\": \"5\",\r\n\t\t\"discount\": \"10\",\r\n\t\t\"otherCost\": \"3\",\r\n\t\t\"shippingCost\": \"50\",\r\n\t\t\"grandTotal\": \"68\",\r\n\t\t\"note\": \"first note\"\r\n\t},\r\n\t\"childs\": [{\r\n\t\t\t\"productId\": \"63c565901cb9d0a0bcc1a8dd\", \r\n\t\t\t\"qty\": \"6\",\r\n\t\t\t\"unitCost\": \"14\",\r\n\t\t\t\"total\": \"15\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"productId\": \"63c565901cb9d0a0bcc1a8dd\",\r\n\t\t\t\"qty\": \"5\",\r\n\t\t\t\"unitCost\": \"458\",\r\n\t\t\t\"total\": \"487\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"productId\": \"63c406de5a2cc2f0376e8813\",\r\n\t\t\t\"qty\": \"2\",\r\n\t\t\t\"unitCost\": \"25\",\r\n\t\t\t\"total\": \"365\"\r\n\t\t}\r\n\t]\r\n}\r\n\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/create-return",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"create-return"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "return list",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/return-list/1/5/0",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"return-list",
+								"1",
+								"5",
+								"0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete return",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/return-delete/63c4417cee7f63ddb43fd408",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"return-delete",
+								"63c4417cee7f63ddb43fd408"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "return report",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fromDate\": \"2022-02-01T00:00:00.000+00:00\",\r\n    \"toDate\": \"2023-02-07T00:00:00.000+00:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/return-report",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"return-report"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Return Summary",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/return-summary",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"return-summary"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8080",
+			"type": "default"
+		},
+		{
+			"key": "token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzU4Njc4NTgsImRhdGEiOiJudXJ1bGxhaDc3MzNAZ21haWwuY29tIiwiaWF0IjoxNjc1NzgxNDU4fQ.mbJZ5gSp8UzkQryam5DIW1nBAiUD1sIXe_KZGSlR7Ig",
+			"type": "default"
+		}
+	]
+}
